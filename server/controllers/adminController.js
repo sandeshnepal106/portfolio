@@ -198,21 +198,26 @@ export const deleteExperience = async (req, res) =>{
     
 }
 
-export const getContacts = async (req, res) =>{
-    try {
-        const page = parseInt(req.query.page) ||1;
-        const limit = parseInt(req.query.limit)||5;
-        const skip = (page - 1) * limit;
-        const contacts = await Contact.find().skip(skip).limit(limit);
-        const total = await Contact.countDocuments();
-        return res.json({
-            contacts,
-            total,
-            page,
-            totalPages: Math.ceil(total / limit)
-        });
-    } catch (error) {
-        return res.json({success:false, message: error.message})
-    }
-}
+export const getContacts = async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 5;
+    const skip = (page - 1) * limit;
+
+    const contacts = await Contact.find().skip(skip).limit(limit);
+    const total = await Contact.countDocuments();
+
+    return res.json({
+      success: true,
+      contacts,
+      total,
+      page,
+      totalPages: Math.ceil(total / limit)
+    });
+  } catch (error) {
+    return res.json({ success: false, message: error.message });
+  }
+};
+
+
 
