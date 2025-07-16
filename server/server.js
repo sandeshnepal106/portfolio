@@ -1,14 +1,13 @@
 import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
-import mongoose from 'mongoose'
 import connectDB from './config/mongodb.js';
 import adminRouter from './routes/adminRouter.js';
 import visitorRouter from './routes/visitorRouter.js';
 import cookieParser from 'cookie-parser';
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 connectDB();
 
 const allowedOrigins = ['http://localhost:3000']
