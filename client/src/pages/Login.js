@@ -34,7 +34,7 @@ function Login() {
             axios.defaults.withCredentials = true;
             const {data} = await axios.post(backendUrl + '/api/admin/logout');
             if (data.success){
-                setIsLoggedin(true);
+                setIsLoggedin(false);
                 navigate('/login');
             }
             else{
