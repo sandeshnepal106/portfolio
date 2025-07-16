@@ -39,7 +39,7 @@ function Contact() {
 
     const getContacts = async(page = 1) =>{
       try {
-        const res= await axios.get(backendUrl + `/api/admin/contacts?page=${page}&limit=5`);
+        const res= await axios.get(backendUrl + `/api/admin/contacts?page=${page}&limit=5`, {withCredentials:true});
         const { contacts, totalPages } = res.data;
         setContacts(contacts);
         setTotalPages(totalPages);
