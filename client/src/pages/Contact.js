@@ -40,7 +40,7 @@ function Contact() {
     const getContacts = async(page = 1) =>{
       try {
         const res= await axios.get(backendUrl + `/api/admin/contacts?page=${page}&limit=5`);
-        const { contacts, totalPages } = res.data;
+        const { contacts = [], totalPages = 1 } = res.data || {};
         setContact(contacts);
         setTotalPages(totalPages);
         setCurrentPage(page);
@@ -117,7 +117,7 @@ function Contact() {
                       </tr>
                     </thead>
                     <tbody>
-                      {contact.map((c, index) => (
+                      {Array.isArray(contact) && contact.map((c, index) => (
                         <tr key={c._id} className="bg-white/5">
                           <td className="p-2 border border-white/20">{(currentPage - 1) * 5 + index + 1}</td>
                           <td className="p-2 border border-white/20">{c.name}</td>
