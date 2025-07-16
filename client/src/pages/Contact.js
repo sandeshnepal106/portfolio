@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 function Contact() {
   const {backendUrl, isLoggedin} = useContext(AppContext);
-  const [contact, setContact] = useState([]);
+  const [contacts, setContacts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [formData, setFormData] = useState({
@@ -40,8 +40,8 @@ function Contact() {
     const getContacts = async(page = 1) =>{
       try {
         const res= await axios.get(backendUrl + `/api/admin/contacts?page=${page}&limit=5`);
-        const { contacts = [], totalPages = 1 } = res.data || {};
-        setContact(contacts);
+        const { contacts, totalPages } = res.data;
+        setContacts(contacts);
         setTotalPages(totalPages);
         setCurrentPage(page);
         toast.success("Contacts fetched successfully.");
@@ -54,7 +54,7 @@ function Contact() {
       if (isLoggedin) {
         getContacts(currentPage);
       }
-    }, [isLoggedin]);
+    }, [isLoggedin, currentPage]);
 
 
 
@@ -117,7 +117,7 @@ function Contact() {
                       </tr>
                     </thead>
                     <tbody>
-                      {Array.isArray(contact) && contact.map((c, index) => (
+                      {contacts.map((c, index) => (
                         <tr key={c._id} className="bg-white/5">
                           <td className="p-2 border border-white/20">{(currentPage - 1) * 5 + index + 1}</td>
                           <td className="p-2 border border-white/20">{c.name}</td>
