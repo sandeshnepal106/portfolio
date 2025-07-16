@@ -54,7 +54,7 @@ function Contact() {
       if (isLoggedin) {
         getContacts(currentPage);
       }
-    }, [isLoggedin, currentPage]);
+    }, []);
 
 
 
