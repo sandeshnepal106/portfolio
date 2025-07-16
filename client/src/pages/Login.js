@@ -18,7 +18,7 @@ function Login() {
             const {data} = await axios.post(backendUrl + '/api/admin/login', {adminName: name, password});
             if (data.success){
                 setIsLoggedin(true);
-                navigate('/login');
+                navigate('/');
             }
             else{
                 toast.error(data.message);
