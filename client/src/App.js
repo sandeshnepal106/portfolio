@@ -2,34 +2,41 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import Experience from './pages/Experience';
-import Login from './pages/Login';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import { useContext } from 'react';
+import { useContext, lazy, Suspense } from 'react';
 import { AppContext } from './context/AppContext';
 
-
-
-
+// Lazy-loaded pages
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Experience = lazy(() => import('./pages/Experience'));
+const Login = lazy(() => import('./pages/Login'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 function App() {
   const { loading, isLoggedin } = useContext(AppContext);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <div className='bg-black font-sigmar text-center h-screen text-5xl md:text-7xl text-white'>
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <div className='bg-elite-gradient-2 bg-400 w-full animate-gradient-tilted flex flex-col items-center justify-center text-white'>
-      <ToastContainer/>
-      <Routes>
-        <Route path='/' element = {<Home/>}></Route>
-        <Route path='/about' element= {<About/>}></Route>
-        <Route path='/projects' element={<Projects/>}></Route>
-        <Route path='/experience' element={<Experience/>}></Route>
-        <Route path='/login' element = {<Login/>}></Route>
-        <Route path ='/contact' element= {<Contact/>}></Route>
-      </Routes>
+      <ToastContainer />
+      <Suspense fallback={<div className="text-center py-10 text-xl h-screen">Loading page...</div>}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/experience' element={<Experience />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }
