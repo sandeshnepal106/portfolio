@@ -216,7 +216,7 @@ function Projects() {
                             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] hover:rounded-2xl hover:z-50 flex flex-col h-full">
                                 {/* Project Image */}
                                 <div className="relative overflow-hidden rounded-2xl">
-                                    <img
+                                    <img loading="lazy"
                                         src={project.imageUrl}
                                         alt={project.title}
                                         className="w-full h-48 sm:h-52 object-cover transition-transform duration-300 group-hover:scale-110"

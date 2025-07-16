@@ -141,7 +141,7 @@ function Experience() {
                 location: formData.location,
                 description: formData.description,
                 techStack: formData.techStack,
-                logoUrl: formData.logoUrl,
+                logoUrl: `https://images.weserv.nl/?url=${formData.logoUrl}&w=20&output=webp`
             };
 
             const { data } = await axios.post(backendUrl + '/api/admin/experience', payload);
@@ -180,7 +180,7 @@ function Experience() {
                 location: editData.location,
                 description: editData.description,
                 techStack: editData.techStack,
-                logoUrl: editData.logoUrl,
+                logoUrl: `https://images.weserv.nl/?url=${editData.logoUrl}&w=200&output=webp`
             };
             const { data } = await axios.put(backendUrl + `/api/admin/experience/${id}` , payload);
             if (data.success){
@@ -258,7 +258,7 @@ function Experience() {
                             className="w-full sm:w-[95%] md:w-[90%] lg:w-[85%] xl:w-full bg-white rounded-xl shadow-lg border border-gray-100 p-6 sm:p-8 flex flex-col md:flex-row items-center md:items-start gap-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:border-indigo-200"
                         >
                             {exp.logoUrl && (
-                                <img
+                                <img loading="lazy"
                                     src={exp.logoUrl}
                                     alt={`${exp.company} Logo`}
                                     // Adjusted logo size for better responsiveness

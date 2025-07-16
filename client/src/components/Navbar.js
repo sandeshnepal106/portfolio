@@ -122,7 +122,7 @@ function Navbar() {
                 {/* --- DESKTOP & TABLET VIEW --- */}
                 <div className="hidden lg:flex items-center gap-6 w-full">
                     <div onClick={() => scrollToSection('home')} className="flex items-center gap-3 cursor-pointer">
-                        <img src={logo} className='rounded-full h-10 w-10 border-2 border-white/20' alt="Logo"/>
+                        <img loading="lazy" src={logo} className='rounded-full h-10 w-10 border-2 border-white/20' alt="Logo"/>
                         <h1 className="text-xl font-bold text-white">Sandesh Nepal.</h1>
                     </div>
                     <ul className="flex flex-1 justify-center items-center gap-8 font-medium text-sm">
@@ -146,7 +146,7 @@ function Navbar() {
                         <GiHamburgerMenu size={24} />
                     </div>
                     <div onClick={() => scrollToSection('home')} className="cursor-pointer">
-                        <img src={logo} className='rounded-full h-10 w-10 border-2 border-white/20' alt="Logo"/>
+                        <img loading="lazy" src={logo} className='rounded-full h-10 w-10 border-2 border-white/20' alt="Logo"/>
                     </div>
                     <ResumeButton />
                 </div>

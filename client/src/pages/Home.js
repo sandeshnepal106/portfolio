@@ -18,7 +18,7 @@ function Home() {
       <section id="home">
         <div className='flex flex-col lg:flex-row bg-[#a6197243] m-10 p-10 border-4 shadow-2xl'>
           <div>
-            <img src={aboutImg} className='rounded-full' />
+            <img loading="lazy" src={aboutImg} className='rounded-full' />
           </div>
           <div className='flex flex-col items-center'>
             <h1 className='text-4xl sm:text-7xl md:text-8xl font-bold text-white text-center md:px-24 lg:px-56 py-10 text-shadow-lg text-border-black font-sigmar'>
