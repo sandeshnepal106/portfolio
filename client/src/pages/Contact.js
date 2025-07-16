@@ -37,24 +37,29 @@ function Contact() {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const getContacts = async(page = 1) =>{
+    const getContacts = async (page = 1) => {
       try {
-        const res= await axios.get(backendUrl + `/api/admin/contacts?page=${page}&limit=5`, {withCredentials:true});
-        const { contacts, totalPages } = res.data;
-        setContacts(contacts);
-        setTotalPages(totalPages);
-        setCurrentPage(page);
-        toast.success("Contacts fetched successfully.");
+        const res = await axios.get(backendUrl + `/api/admin/contacts?page=${page}&limit=5`, { withCredentials: true });
+
+        if (res.data.success) {
+          const { contacts = [], totalPages = 1 } = res.data;
+          setContacts(contacts);
+          setTotalPages(totalPages);
+          setCurrentPage(page);
+        } else {
+          toast.error(res.data.message || "Failed to fetch contacts");
+        }
       } catch (error) {
         toast.error(error.message);
       }
-    }
+    };
+
 
     useEffect(() => {
       if (isLoggedin) {
         getContacts(currentPage);
       }
-    }, []);
+    }, [isLoggedin, currentPage]);
 
 
 
@@ -117,7 +122,7 @@ function Contact() {
                       </tr>
                     </thead>
                     <tbody>
-                      {contacts.map((c, index) => (
+                      {Array.isArray(contacts) && contacts.map((c, index) => (
                         <tr key={c._id} className="bg-white/5">
                           <td className="p-2 border border-white/20">{(currentPage - 1) * 5 + index + 1}</td>
                           <td className="p-2 border border-white/20">{c.name}</td>
