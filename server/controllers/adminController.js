@@ -24,11 +24,12 @@ export const login = async (req, res) =>{
         const token = jwt.sign({id: admin._id}, process.env.JWT_SECRET, {expiresIn: '7h'});
         res.cookie('token', token, {
             httpOnly: true,
-            secure: true,
-            sameSite: 'None',
-            maxAge: 7*60*60*1000,
-            path: '/'
-        })
+            secure: process.env.NODE_ENV === 'production', // ✅ secure ONLY in production
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', // ✅ adjust for local dev
+            maxAge: 7 * 60 * 60 * 1000,
+            path: '/',
+        });
+
 
         return res.json({success: true, message: "Logged In successfully."});
 
