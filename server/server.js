@@ -15,7 +15,11 @@ const allowedOrigins = ['http://localhost:3000']
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 
 app.get('/', (req, res)=> res.send("API working"));
 app.use('/api/admin', adminRouter);

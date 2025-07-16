@@ -8,10 +8,19 @@ import Experience from './pages/Experience';
 import Login from './pages/Login';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import { useContext } from 'react';
+import { AppContext } from './context/AppContext';
+
+
+
+
 
 function App() {
+  const { loading, isLoggedin } = useContext(AppContext);
+
+  if (loading) return <div>Loading...</div>;
   return (
-    <div className='bg-elite-gradient-2 bg-400 w-full animate-gradient-tilted flex flex-col items-center justify-center text-white  overflow-hidden'>
+    <div className='bg-elite-gradient-2 bg-400 w-full animate-gradient-tilted flex flex-col items-center justify-center text-white'>
       <ToastContainer/>
       <Routes>
         <Route path='/' element = {<Home/>}></Route>

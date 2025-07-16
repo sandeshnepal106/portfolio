@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-black/60 text-white py-10 mt-20">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="flex flex-col px-6 justify-between items-center gap-6">
         {/* Left: Logo or Name */}
         <div className="text-xl font-semibold tracking-wide">
           &copy; {currentYear} Sandesh Nepal. All rights reserved.
@@ -20,10 +20,10 @@ const Footer = () => {
 
         {/* Right: Socials */}
         <div className="flex gap-4">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition">
+          <a href="https://github.com/sandeshnepal106" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition">
             GitHub
           </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition">
+          <a href="https://www.linkedin.com/in/sandeshnepal106" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition">
             LinkedIn
           </a>
         </div>

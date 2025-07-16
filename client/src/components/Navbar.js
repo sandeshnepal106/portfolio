@@ -110,7 +110,7 @@ function Navbar() {
             <nav
                 className={`
                     fixed top-4 left-1/2 z-50 flex items-center
-                    w-[calc(100%-2rem)] max-w-6xl rounded-full px-4 sm:px-6 py-3 
+                    w-[calc(100%-2rem)] max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-5xl  rounded-full px-4 sm:px-6 py-3 
                     bg-black/60 backdrop-blur-xl border border-white/10 shadow-lg
                     transition-all duration-500 ease-in-out
                     ${isNavbarVisible
@@ -142,7 +142,7 @@ function Navbar() {
 
                 {/* --- MOBILE VIEW --- */}
                 <div className="flex lg:hidden items-center justify-between w-full">
-                    <div onClick={handleNavToggle} className="cursor-pointer text-white p-2">
+                    <div onClick={handleNavToggle} className="cursor-pointer text-white px-8">
                         <GiHamburgerMenu size={24} />
                     </div>
                     <div onClick={() => scrollToSection('home')} className="cursor-pointer">

@@ -5,7 +5,10 @@ function About() {
   return (
   <div className="min-h-screen  px-6 py-16">
     <div className="max-w-4xl mx-auto text-center  flex flex-col items-center justify-center gap-6">
-      <h1 className="text-4xl sm:text-5xl font-sigmar mb-6">About Me</h1>
+      <div>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sigmar mb-6 uppercase">About Me</h1>
+        <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto rounded-full"></div>
+      </div>
       <img src={aboutImg} className='rounded-full w-1/2 border-4 border-white '/>
       <p className="text-lg sm:text-xl font-outfit leading-relaxed text-white/90">
         I'm a passionate full-stack developer blending creativity and code to craft meaningful digital experiences. With a foundation in Electrical & Electronics Engineering and a sharp eye for modern web design, I build responsive, dynamic applications that reflect both function and aesthetics.

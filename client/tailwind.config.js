@@ -21,20 +21,20 @@ module.exports = {
       backgroundImage: {
         // --- ELITE GRADIENT OPTIONS ---
 
-        // Option 1: Subtle & Professional (Blue-Purple-Pink-Orange)
-        'elite-gradient-1': 'linear-gradient(135deg, #1A202C, #2C5282, #6B46C1, #D53F8C, #F6AD55)',
+        // Option 1: Midnight Tech (Dark Navy - Steel Blue - Indigo)
+  'elite-gradient-1': 'linear-gradient(135deg, #0B0C10, #1F2833, #283149, #3C3F58)',
 
-        // Option 2: Vibrant & Modern (Teal-Purple-Pink)
-        'elite-gradient-2': 'linear-gradient(135deg, #06B6D4, #7C3AED, #EC4899)',
+  // Option 2: Deep Void (Charcoal - Teal - Purple)
+  'elite-gradient-2': 'linear-gradient(135deg, #1A1A1D, #0F4C5C, #2C2A4A)',
 
-        // Option 3: Deep & Rich (Dark Blue-Green-Purple)
-        'elite-gradient-3': 'linear-gradient(135deg, #0F172A, #164E63, #4C1D95, #6D28D9)',
+  // Option 3: Galactic Night (Dark Blue - Deep Purple - Magenta)
+  'elite-gradient-3': 'linear-gradient(135deg, #0D1B2A, #1B263B, #415A77, #6D597A)',
 
-        // Option 4: Soft & Elegant (Pastel Peach-Pink-Blue)
-        'elite-gradient-4': 'linear-gradient(135deg, #FAD0C4, #FAD0C4, #FFD700, #A1C4FD, #C2EBF7)',
+  // Option 4: Dark Aurora (Dark Cyan - Forest Green - Indigo)
+  'elite-gradient-4': 'linear-gradient(135deg, #0F3D3E, #1B4242, #4C3575)',
 
-        // Option 5: Futuristic & Dark (Dark Teal-Blue-Purple)
-        'elite-gradient-5': 'linear-gradient(135deg, #0F172A, #1E3A8A, #06B6D4, #7C3AED)',
+  // Option 5: Cyber Noir (Almost Black - Gunmetal - Neon Purple)
+  'elite-gradient-5': 'linear-gradient(135deg, #0A0A0A, #1F1F1F, #2B2D42, #8D00FF)',
 
 
         // You can uncomment and use any of the above, or combine elements.
