@@ -4,4 +4,41 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: #000000; /* Or another dark color like #0d0d21 to match your theme */
+  color: white; 
+}
+
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0; /* Start hidden */
+}
+
+@layer base {
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* We scroll by -50% because the content is duplicated for a seamless loop */
+      transform: translateX(-50%);
+    }
+  }
 }

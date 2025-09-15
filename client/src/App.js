@@ -13,19 +13,24 @@ const Experience = lazy(() => import('./pages/Experience'));
 const Login = lazy(() => import('./pages/Login'));
 const Contact = lazy(() => import('./pages/Contact'));
 
+const Loader = () => {
+  return (
+    <div className='flex flex-col justify-center items-center h-screen bg-black text-white gap-y-4'>
+      <div className='w-16 h-16 border-8 border-dashed rounded-full animate-spin border-pink-400'></div>
+      <p className='text-xl font-semibold tracking-wider'>Initializing...</p>
+    </div>
+  );
+};
+
 function App() {
   const { loading, isLoggedin } = useContext(AppContext);
 
   if (loading) {
-    return (
-      <div className='bg-black font-sigmar text-center h-screen text-5xl md:text-7xl text-white'>
-        Loading...
-      </div>
-    );
+    return <Loader />;
   }
 
   return (
-    <div className='bg-elite-gradient-2 bg-400 w-full animate-gradient-tilted flex flex-col items-center justify-center text-white'>
+    <div className=' bg-400 w-full min-h-screen  flex flex-col items-center justify-center text-white'>
       <ToastContainer />
       <Suspense fallback={<div className="text-center py-10 text-xl h-screen">Loading page...</div>}>
         <Routes>
