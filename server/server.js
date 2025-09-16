@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 connectDB();
 
-const allowedOrigins = ['https://portfolio-tau-neon-24.vercel.app']
+const allowedOrigins = ['https://sandeshnepal.vercel.app']
 
 app.use(express.json());
 app.use(cookieParser());
