@@ -61,9 +61,12 @@ function Experience() {
 
   const handleFormSubmit = async (formData) => {
     try {
+      let payload = { ...formData };
       const { logoUrl } = formData;
-      const optimizedLogoUrl = logoUrl ? `https://images.weserv.nl/?url=${encodeURIComponent(logoUrl)}&w=200&output=webp` : '';
-      const payload = { ...formData, logoUrl: optimizedLogoUrl };
+      if (logoUrl && !logoUrl.startsWith('https://images.weserv.nl')) {
+        const optimizedLogoUrl = `https://images.weserv.nl/?url=${encodeURIComponent(logoUrl)}&w=200&output=webp`;
+        payload.logoUrl = optimizedLogoUrl;
+      }
 
       if (selectedExperience) {
         await axios.put(`${backendUrl}/api/admin/experience/${selectedExperience._id}`, payload);
