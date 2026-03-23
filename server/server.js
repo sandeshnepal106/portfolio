@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 connectDB();
 
-const allowedOrigins = ['https://sandeshnepal.vercel.app/']
+const allowedOrigins = ['https://sandeshnepal.vercel.app', 'http://localhost:3000']
 
 app.use(express.json());
 app.use(cookieParser());
@@ -20,7 +20,7 @@ app.use(cors({
 }));
 
 
-app.get('/', (req, res)=> res.send("API working"));
+app.get('/', (req, res) => res.send("API working"));
 app.use('/api/admin', adminRouter);
 app.use('/api/visitor', visitorRouter);
 app.listen(port, '0.0.0.0', () => console.log(`Server started at ${port}`));
