@@ -2,12 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #000000; /* Or another dark color like #0d0d21 to match your theme */
-  color: white; 
+/* =====================================================
+   FONTS
+===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Sigmar&display=swap');
+
+/* =====================================================
+   ROOT & GLOBAL
+===================================================== */
+:root {
+  --color-bg: #030014;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+  --color-cyan: #22d3ee;
+  --color-purple: #a855f7;
+  --color-pink: #ec4899;
+  --color-violet: #7c3aed;
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--color-bg);
+  color: rgba(255, 255, 255, 0.9);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030014;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.5);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.8);
+}
 
 #root {
   min-height: 100vh;
@@ -15,30 +66,357 @@ body {
   flex-direction: column;
 }
 
-@keyframes fadeInUp {
+/* =====================================================
+   NOISE / GRAIN TEXTURE OVERLAY
+===================================================== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px;
+}
+
+/* =====================================================
+   GLASS MORPHISM COMPONENT
+===================================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.glass-hover {
+  transition: var(--transition-smooth);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45), 0 0 32px rgba(168, 85, 247, 0.12);
+}
+
+/* Subtle horizontal rule between sections */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.06), transparent);
+  margin: 0 auto;
+}
+
+/* =====================================================
+   GRADIENT TEXT
+===================================================== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-purple) 55%, var(--color-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-purple) 50%, var(--color-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =====================================================
+   SECTION HEADING STYLE
+===================================================== */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: var(--color-purple);
+  margin-bottom: 1rem;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+/* =====================================================
+   GLOW ORBS (background decoration)
+===================================================== */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.orb-purple {
+  background: radial-gradient(ellipse, #7c3aed 0%, transparent 70%);
+}
+
+.orb-cyan {
+  background: radial-gradient(ellipse, #22d3ee 0%, transparent 70%);
+}
+
+.orb-pink {
+  background: radial-gradient(ellipse, #ec4899 0%, transparent 70%);
+}
+
+/* =====================================================
+   BUTTON STYLES
+===================================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #a855f7, #22d3ee);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.5), 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* =====================================================
+   SWIPER CUSTOMIZATION
+===================================================== */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #a855f7 !important;
+  background: rgba(168, 85, 247, 0.1) !important;
+  border: 1px solid rgba(168, 85, 247, 0.3) !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(8px);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 14px !important;
+  font-weight: 700;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(168, 85, 247, 0.3) !important;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5) !important;
+  transform: scale(1.1);
+}
+
+.swiper-pagination-bullet {
+  background: rgba(168, 85, 247, 0.4) !important;
+  opacity: 1 !important;
+  width: 8px !important;
+  height: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #a855f7 !important;
+  width: 28px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.6) !important;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  background-image: linear-gradient(to left, rgba(3, 0, 20, 0.8), transparent) !important;
+}
+
+/* =====================================================
+   ANIMATED GRADIENT BORDER (for cards / highlights)
+===================================================== */
+.gradient-border {
+  position: relative;
+  z-index: 0;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.5), rgba(168, 85, 247, 0.5), rgba(236, 72, 153, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* =====================================================
+   SCROLL REVEAL (initial hidden state for GSAP)
+===================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* =====================================================
+   TECH TAG PILL
+===================================================== */
+.tech-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  color: #22d3ee;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(34, 211, 238, 0.15);
+  border-color: rgba(34, 211, 238, 0.4);
+}
+
+/* =====================================================
+   TIMELINE LINE ANIMATED
+===================================================== */
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, rgba(168, 85, 247, 0.6), transparent);
+}
+
+/* =====================================================
+   HERO FLOATING AVATAR RING
+===================================================== */
+@keyframes ring-rotate {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+    transform: rotate(0deg);
   }
+
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: rotate(360deg);
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0; /* Start hidden */
+@keyframes ring-rotate-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
 }
 
-@layer base {
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      /* We scroll by -50% because the content is duplicated for a seamless loop */
-      transform: translateX(-50%);
-    }
-  }
+.ring-rotate {
+  animation: ring-rotate 15s linear infinite;
+}
+
+.ring-rotate-reverse {
+  animation: ring-rotate-reverse 20s linear infinite;
+}
+
+.icon-counter-rotate {
+  animation: ring-rotate-reverse 15s linear infinite;
+}
+
+.icon-counter-rotate-reverse {
+  animation: ring-rotate 20s linear infinite;
+}
+
+/* =====================================================
+   CONTACT FORM INPUT FOCUS
+===================================================== */
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.form-input:focus {
+  border-color: rgba(168, 85, 247, 0.6);
+  background: rgba(168, 85, 247, 0.06);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.12);
 }

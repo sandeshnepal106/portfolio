@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Portfolio Website",
+    "description": "A fully responsive personal portfolio built with React and Tailwind CSS, featuring smooth animations, a particle background, and lazy-loaded sections.",
+    "techStack": ["React.js", "Tailwind CSS", "GSAP", "Node.js", "MongoDB"],
+    "githubUrl": "https://github.com/sandeshnepal106/portfolio",
+    "imageUrl": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80"
+  },
+  {
+    "id": "2",
+    "title": "Task Management App",
+    "description": "A full-stack productivity app with real-time updates, drag-and-drop boards, user authentication, and deadline reminders.",
+    "techStack": ["React.js", "Express.js", "MongoDB", "Socket.io", "JWT"],
+    "githubUrl": "https://github.com/sandeshnepal106/task-manager",
+    "imageUrl": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80"
+  },
+  {
+    "id": "3",
+    "title": "E-Commerce Platform",
+    "description": "A scalable e-commerce solution with product filtering, cart management, payment gateway integration, and an admin dashboard.",
+    "techStack": ["Next.js", "Tailwind CSS", "Stripe", "PostgreSQL", "Prisma"],
+    "githubUrl": "https://github.com/sandeshnepal106/ecommerce",
+    "imageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
+  },
+  {
+    "id": "4",
+    "title": "AI Quiz Platform",
+    "description": "An intelligent quiz app with timed challenges, leaderboards, streak tracking, and AI-powered question generation.",
+    "techStack": ["React.js", "Node.js", "MongoDB", "OpenAI API", "Framer Motion"],
+    "githubUrl": "https://github.com/sandeshnepal106/ai-quiz",
+    "imageUrl": "https://images.unsplash.com/photo-1606326608690-4e0281b1e588?w=800&q=80"
+  },
+  {
+    "id": "5",
+    "title": "Weather Dashboard",
+    "description": "A beautiful weather app with 7-day forecasts, location-based detection, animated weather icons, and air quality indices.",
+    "techStack": ["React.js", "OpenWeather API", "Chart.js", "CSS3"],
+    "githubUrl": "https://github.com/sandeshnepal106/weather-app",
+    "imageUrl": "https://images.unsplash.com/photo-1504608524841-42584120d693?w=800&q=80"
+  }
+]

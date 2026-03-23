@@ -81,6 +81,27 @@ const contactSchema = new mongoose.Schema({
     }
 })
 
+const gallerySchema = new mongoose.Schema({
+    imageUrl: {
+        type: String,
+        required: true
+    },
+    tag: {
+        type: String,
+        enum: ['event', 'behind-the-scenes', 'personal', 'misc'],
+        default: 'misc'
+    },
+    publicId: {
+        type: String,
+        required: true 
+    },
+    uploadedAt: {
+        type: Date,
+        default: Date.now
+    }
+});
+
 export const Project = mongoose.model('Project', projectSchema);
 export const Experience = mongoose.model('Experience', experienceSchema);
 export const Contact = mongoose.model('Contact', contactSchema);
+export const Gallery = mongoose.model('Gallery', gallerySchema);

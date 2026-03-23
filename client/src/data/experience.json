@@ -1,0 +1,53 @@
+[
+    {
+        "id": "1",
+        "company": "TechNova Solutions",
+        "role": "Full Stack Developer Intern",
+        "description": "Developed and maintained RESTful APIs and React dashboards for a SaaS platform serving 10,000+ users. Improved page load time by 40% through code splitting and lazy loading optimizations.",
+        "startDate": "2024-06-01",
+        "endDate": "2024-12-01",
+        "location": "Remote",
+        "techStack": [
+            "React.js",
+            "Node.js",
+            "MongoDB",
+            "AWS S3",
+            "Tailwind CSS"
+        ],
+        "logoUrl": "https://ui-avatars.com/api/?name=TechNova+Solutions&background=6366f1&color=fff&size=200"
+    },
+    {
+        "id": "2",
+        "company": "NIT Sikkim — Web Cell",
+        "role": "Web Developer",
+        "description": "Led the redesign and development of the college's official web presence. Built an event portal, managed content updates, and mentored junior team members on React best practices.",
+        "startDate": "2023-08-01",
+        "endDate": "2024-05-01",
+        "location": "NIT Sikkim, India",
+        "techStack": [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "React.js",
+            "PHP"
+        ],
+        "logoUrl": "https://ui-avatars.com/api/?name=NIT+Sikkim&background=ec4899&color=fff&size=200"
+    },
+    {
+        "id": "3",
+        "company": "Freelance",
+        "role": "Frontend Developer",
+        "description": "Delivered custom web solutions for local businesses — landing pages, portfolio sites, and booking systems. Handled end-to-end design-to-deployment workflow independently.",
+        "startDate": "2023-01-01",
+        "endDate": null,
+        "location": "Remote",
+        "techStack": [
+            "React.js",
+            "Tailwind CSS",
+            "Next.js",
+            "Vercel",
+            "Git"
+        ],
+        "logoUrl": "https://ui-avatars.com/api/?name=Freelance&background=8b5cf6&color=fff&size=200"
+    }
+]

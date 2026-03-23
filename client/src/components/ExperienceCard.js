@@ -1,67 +1,63 @@
 // src/components/ExperienceCard.js
-
 import React from 'react';
+import { HiOutlineLocationMarker, HiOutlineCalendar } from 'react-icons/hi';
 
-function ExperienceCard({ experience, onEdit, onDelete, isLoggedin, index }) {
+function ExperienceCard({ experience, isLeft }) {
   const { company, role, startDate, endDate, location, description, techStack, logoUrl } = experience;
 
-  const formatDate = (dateString) => {
-    if (!dateString) return 'Present';
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-    });
+  const formatDate = (ds) => {
+    if (!ds) return 'Present';
+    return new Date(ds).toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
   };
 
-  const alignment = index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'; // Starts on the left
+  const initials = company?.slice(0, 2).toUpperCase() || '??';
 
   return (
-    // The main container is now simpler. The complex flex properties only apply on `md` screens.
-    <div className={`w-full max-w-2xl md:max-w-none md:flex md:justify-between md:items-center ${alignment}`}>
-      
-      {/* DESKTOP-ONLY: Hidden spacer */}
-      <div className="hidden md:block w-5/12"></div>
+    <div className="glass gradient-border rounded-2xl p-6 shadow-card transition-all duration-500
+      hover:-translate-y-1 hover:shadow-card-hover w-full">
 
-      {/* DESKTOP-ONLY: Timeline Dot and Line */}
-      {/* These elements are now completely hidden on mobile screens */}
-      <div className="hidden md:flex relative h-full w-6 flex-shrink-0">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="h-full w-1 bg-indigo-400 pointer-events-none"></div>
-        </div>
-        <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-500 shadow z-10"></div>
-      </div>
-
-      {/* Card Content: Takes full width on mobile, and 5/12 on desktop */}
-      <div className="bg-white text-black rounded-xl shadow-lg border border-gray-100 p-6 w-full md:w-5/12 transition-all hover:shadow-xl hover:border-indigo-200">
-        {/* The rest of the card content remains the same */}
-        <div className="flex items-center gap-4 mb-3">
-          {logoUrl && <img src={logoUrl} alt={`${company} logo`} className="w-12 h-12 object-contain rounded-full border p-1" />}
-          <div>
-            <h3 className="text-xl font-bold text-gray-900">{role}</h3>
-            <h4 className="text-lg text-indigo-700 font-semibold">{company}</h4>
-          </div>
-        </div>
-        <p className="text-gray-600 text-sm mb-3">
-          {formatDate(startDate)} - {formatDate(endDate)}
-          {location && <span className="ml-2 text-gray-500">| {location}</span>}
-        </p>
-        <p className="text-gray-700 leading-relaxed mb-4">{description}</p>
-        {techStack?.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {techStack.map((tech, i) => (
-              <span key={i} className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
-                {tech}
-              </span>
-            ))}
+      {/* Header */}
+      <div className="flex items-start gap-4 mb-4">
+        {logoUrl ? (
+          <img src={logoUrl} alt={company}
+            className="w-12 h-12 rounded-xl object-cover border border-white/10 bg-white/5 shrink-0" />
+        ) : (
+          <div className="w-12 h-12 rounded-xl bg-purple-600/30 border border-purple-500/30
+            flex items-center justify-center shrink-0">
+            <span className="text-purple-300 text-sm font-bold">{initials}</span>
           </div>
         )}
-        {isLoggedin && (
-          <div className="flex gap-3 mt-4 pt-4 border-t border-gray-200">
-            <button onClick={() => onEdit(experience)} className="px-4 py-2 bg-green-500 text-white text-sm font-medium rounded-lg hover:bg-green-600 transition">Edit</button>
-            <button onClick={() => onDelete(experience._id)} className="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded-lg hover:bg-red-600 transition">Delete</button>
-          </div>
+        <div className="min-w-0">
+          <h3 className="text-base font-bold text-white leading-snug">{role}</h3>
+          <p className="text-purple-300 font-semibold text-sm mt-0.5">{company}</p>
+        </div>
+      </div>
+
+      {/* Meta */}
+      <div className="flex flex-wrap gap-x-4 gap-y-1.5 mb-4">
+        <span className="flex items-center gap-1.5 text-gray-400 text-xs">
+          <HiOutlineCalendar className="text-purple-400 shrink-0" />
+          {formatDate(startDate)} — {formatDate(endDate)}
+        </span>
+        {location && (
+          <span className="flex items-center gap-1.5 text-gray-400 text-xs">
+            <HiOutlineLocationMarker className="text-cyan-400 shrink-0" />
+            {location}
+          </span>
         )}
       </div>
+
+      {/* Description */}
+      <p className="text-gray-400/90 text-sm leading-relaxed mb-4">{description}</p>
+
+      {/* Tech tags */}
+      {techStack?.length > 0 && (
+        <div className="flex flex-wrap gap-1.5">
+          {techStack.map((tech, i) => (
+            <span key={i} className="tech-tag text-xs">{tech}</span>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
