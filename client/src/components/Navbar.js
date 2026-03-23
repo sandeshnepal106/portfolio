@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { gsap } from 'gsap';
+import React, { useEffect, useState} from 'react';
 import logo from '../assets/logo.png';
 import resumePDF from '../assets/cv.pdf';
 import { MdClose } from "react-icons/md";
