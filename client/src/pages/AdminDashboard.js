@@ -33,6 +33,7 @@ export default function AdminDashboard() {
     useEffect(() => {
         // Authenticate check essentially happens via the contacts fetch due to adminAuth middleware
         fetchContacts();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleLogout = async () => {
