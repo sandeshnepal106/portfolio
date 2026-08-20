@@ -18,7 +18,7 @@ function BackgroundParticles() {
   const options = {
     background: {
       color: {
-        value: "#0d0d21", // A deeper, cosmic blue
+        value: "#08051a",
       },
     },
     fpsLimit: 120, // Increased for smoother animations
@@ -57,7 +57,7 @@ function BackgroundParticles() {
     },
     particles: {
       color: {
-        value: ["#ff00ff", "#00ffff", "#ffffff", "#9933ff"], // A vibrant, multi-color palette
+        value: ["#a78bfa", "#67e8f9", "#ffffff", "#f472b6"],
       },
       links: {
         color: "random", // Links will take on the color of one of the connected particles

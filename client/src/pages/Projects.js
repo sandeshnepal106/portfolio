@@ -56,12 +56,12 @@ function Projects() {
     };
 
     return (
-        <div ref={containerRef} className="relative w-full max-w-6xl mx-auto py-24 px-5 sm:px-8">
+        <div ref={containerRef} className="section-clip relative w-full max-w-6xl mx-auto py-24 px-5 sm:px-8">
             {/* Ambient glow */}
             <div className="orb orb-pink w-80 h-80 right-0 top-0 opacity-[0.07] pointer-events-none" />
 
             {/* Header */}
-            <div className="proj-header text-center mb-14">
+            <div className="proj-header text-center mb-10 sm:mb-14">
                 <span className="section-tag">My Work</span>
                 <h2 className="section-heading">
                     <span className="gradient-text">Featured Projects</span>
@@ -72,7 +72,7 @@ function Projects() {
             {/* 3-column grid */}
             <div
                 ref={gridRef}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
             >
                 {visible.map((project) => (
                     <div key={project.id} className="proj-card">
@@ -88,9 +88,9 @@ function Projects() {
                         ref={moreBtnRef}
                         onClick={toggle}
                         className="group inline-flex items-center gap-2 px-8 py-3 rounded-full
-              border border-purple-500/40 bg-purple-500/10 text-purple-300
+              border border-amber-300/30 bg-amber-300/10 text-amber-200
               font-semibold text-sm tracking-wide
-              hover:bg-purple-500/20 hover:border-purple-400/60 hover:text-white
+              hover:bg-amber-300/20 hover:border-amber-300/60 hover:text-white
               transition-all duration-300 shadow-glow-sm"
                     >
                         {showAll ? (

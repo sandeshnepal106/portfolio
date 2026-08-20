@@ -1,53 +1,54 @@
 [
     {
         "id": "1",
-        "company": "TechNova Solutions",
-        "role": "Full Stack Developer Intern",
-        "description": "Developed and maintained RESTful APIs and React dashboards for a SaaS platform serving 10,000+ users. Improved page load time by 40% through code splitting and lazy loading optimizations.",
-        "startDate": "2024-06-01",
-        "endDate": "2024-12-01",
-        "location": "Remote",
+        "company": "Solar Quest LLP",
+        "role": "Solar PV Engineer Intern",
+        "description": "Worked on solar PV and electrical design, including inverters, transformers, cables, equipment ratings, protection, and single-line diagrams. Performed PVsyst simulations with 3D shading, loss analysis, and energy-yield estimation. Used ETAP for system modelling and fault analysis, conducted metro-site visits, and developed Python scripts for solar-generation monitoring.",
+        "startDate": "2026-06-01",
+        "endDate": "2026-07-01",
+        "location": "Chennai, India",
         "techStack": [
-            "React.js",
-            "Node.js",
-            "MongoDB",
-            "AWS S3",
-            "Tailwind CSS"
+            "PVsyst",
+            "ETAP",
+            "Python",
+            "Growatt",
+            "Trackso",
+            "iSolar",
+            "Invendis"
         ],
-        "logoUrl": "https://ui-avatars.com/api/?name=TechNova+Solutions&background=6366f1&color=fff&size=200"
+        "logoUrl": "https://ui-avatars.com/api/?name=Solar+Quest&background=0f766e&color=fff&size=200"
     },
     {
         "id": "2",
-        "company": "NIT Sikkim — Web Cell",
-        "role": "Web Developer",
-        "description": "Led the redesign and development of the college's official web presence. Built an event portal, managed content updates, and mentored junior team members on React best practices.",
-        "startDate": "2023-08-01",
-        "endDate": "2024-05-01",
-        "location": "NIT Sikkim, India",
+        "company": "Ririana Innovations",
+        "role": "Software Development Intern",
+        "description": "Developed a responsive mobile frontend with distinct interfaces for users and administrators. Translated design prototypes into a functional mobile experience, managed APK bundling for testing, and implemented property browsing, listing management, and booking workflows.",
+        "startDate": "2025-12-01",
+        "endDate": "2026-02-01",
+        "location": "Remote",
         "techStack": [
-            "HTML5",
-            "CSS3",
+            "React Native",
             "JavaScript",
-            "React.js",
-            "PHP"
+            "Mobile UI",
+            "APK Bundling"
         ],
-        "logoUrl": "https://ui-avatars.com/api/?name=NIT+Sikkim&background=ec4899&color=fff&size=200"
+        "logoUrl": "https://ui-avatars.com/api/?name=Ririana+Innovations&background=2563eb&color=fff&size=200"
     },
     {
         "id": "3",
-        "company": "Freelance",
-        "role": "Frontend Developer",
-        "description": "Delivered custom web solutions for local businesses — landing pages, portfolio sites, and booking systems. Handled end-to-end design-to-deployment workflow independently.",
-        "startDate": "2023-01-01",
-        "endDate": null,
-        "location": "Remote",
+        "company": "Global Trendz",
+        "role": "Web Development Intern",
+        "description": "Contributed frontend features using React.js, HTML, and CSS. Debugged UI/UX issues, implemented responsive design updates across devices, and participated in code reviews within a production development workflow.",
+        "startDate": "2025-06-01",
+        "endDate": "2025-07-01",
+        "location": "New Delhi, India",
         "techStack": [
             "React.js",
-            "Tailwind CSS",
-            "Next.js",
-            "Vercel",
+            "HTML",
+            "CSS",
+            "Responsive Design",
             "Git"
         ],
-        "logoUrl": "https://ui-avatars.com/api/?name=Freelance&background=8b5cf6&color=fff&size=200"
+        "logoUrl": "https://ui-avatars.com/api/?name=Global+Trendz&background=be123c&color=fff&size=200"
     }
 ]

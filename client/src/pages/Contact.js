@@ -57,7 +57,7 @@ function Contact() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-6xl mx-auto py-24 px-5 sm:px-8">
+    <div ref={containerRef} className="section-clip relative w-full max-w-6xl mx-auto py-24 px-5 sm:px-8">
       {/* Ambient */}
       <div className="orb orb-purple w-96 h-96 left-1/2 top-0 -translate-x-1/2 opacity-[0.08]
         pointer-events-none" />

@@ -120,7 +120,7 @@ function Gallery() {
   }
 
   return (
-    <div ref={containerRef} className="relative w-full py-24 overflow-hidden">
+    <div ref={containerRef} className="relative w-full py-24" style={{ overflowX: 'clip' }}>
       <div className="orb orb-cyan w-80 h-80 -left-20 top-0 opacity-[0.06] pointer-events-none" />
 
       {/* Header */}
@@ -151,13 +151,18 @@ function Gallery() {
 
       {/* ── 3D Prism ──────────────────────────────── */}
       <div
-        className="relative flex items-center justify-center select-none"
+        className="relative flex items-center justify-center select-none w-full"
         style={{ height: ITEM_HEIGHT + 80 }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => { setPaused(false); startTimer(); }}
       >
-        {/* Perspective wrapper */}
-        <div style={{ perspective: '1100px', width: ITEM_WIDTH, height: ITEM_HEIGHT }}>
+        {/* Perspective wrapper — capped so it never exceeds the viewport */}
+        <div style={{
+          perspective: '1100px',
+          width: Math.min(ITEM_WIDTH, 260),
+          height: ITEM_HEIGHT,
+          maxWidth: '90vw',
+        }}>
           {/* Spinner */}
           <div
             style={{

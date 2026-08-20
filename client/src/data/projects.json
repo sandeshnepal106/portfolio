@@ -1,42 +1,66 @@
 [
   {
     "id": "1",
-    "title": "Portfolio Website",
-    "description": "A fully responsive personal portfolio built with React and Tailwind CSS, featuring smooth animations, a particle background, and lazy-loaded sections.",
-    "techStack": ["React.js", "Tailwind CSS", "GSAP", "Node.js", "MongoDB"],
-    "githubUrl": "https://github.com/sandeshnepal106/portfolio",
-    "imageUrl": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80"
+    "title": "Mighty Mouse: ESP32-Powered 4WD Combat Robot",
+    "description": "Designed a 4WD metal-chassis combat robot with a high-RPM spinner weapon, dual ESP32 ESP-NOW control, LiPo power distribution, motor drivers, and a dedicated ESC.",
+    "techStack": ["ESP32", "C++", "ESP-NOW", "ESC", "Motor Drivers"],
+    "githubUrl": "https://github.com/sandeshnepal106/Mighty-Mouse",
+    "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80"
   },
   {
     "id": "2",
-    "title": "Task Management App",
-    "description": "A full-stack productivity app with real-time updates, drag-and-drop boards, user authentication, and deadline reminders.",
-    "techStack": ["React.js", "Express.js", "MongoDB", "Socket.io", "JWT"],
-    "githubUrl": "https://github.com/sandeshnepal106/task-manager",
-    "imageUrl": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80"
+    "title": "IIoT-Based Predictive Maintenance System",
+    "description": "Simulated an IIoT predictive maintenance system with a virtual ESP32 edge device and MQTT telemetry pipeline to visualize temperature and voltage degradation.",
+    "techStack": ["Wokwi", "C++", "MQTT", "Python", "Google Colab"],
+    "githubUrl": "https://github.com/sandeshnepal106",
+    "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
   },
   {
     "id": "3",
-    "title": "E-Commerce Platform",
-    "description": "A scalable e-commerce solution with product filtering, cart management, payment gateway integration, and an admin dashboard.",
-    "techStack": ["Next.js", "Tailwind CSS", "Stripe", "PostgreSQL", "Prisma"],
-    "githubUrl": "https://github.com/sandeshnepal106/ecommerce",
-    "imageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
+    "title": "IoT-Based Environmental Monitoring System",
+    "description": "Simulated an ESP32 multi-sensor system using DHT22, MQ-135, and LDR sensors with calibration, ADC processing, moving-average filtering, and ThingSpeak dashboards.",
+    "techStack": ["ESP32", "DHT22", "MQ-135", "ThingSpeak", "C++"],
+    "githubUrl": "https://github.com/sandeshnepal106/IoT-Based-Environmental-Monitoring-System",
+    "imageUrl": "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80"
   },
   {
     "id": "4",
-    "title": "AI Quiz Platform",
-    "description": "An intelligent quiz app with timed challenges, leaderboards, streak tracking, and AI-powered question generation.",
-    "techStack": ["React.js", "Node.js", "MongoDB", "OpenAI API", "Framer Motion"],
-    "githubUrl": "https://github.com/sandeshnepal106/ai-quiz",
-    "imageUrl": "https://images.unsplash.com/photo-1606326608690-4e0281b1e588?w=800&q=80"
+    "title": "PMSG Based Gearless Variable Speed Wind Turbine",
+    "description": "Simulated a gearless variable-speed wind turbine with a Permanent Magnet Synchronous Generator and back-to-back converter for stable power output.",
+    "techStack": ["MATLAB", "Simulink", "PMSG", "Power Electronics"],
+    "githubUrl": "https://github.com/sandeshnepal106",
+    "imageUrl": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80"
   },
   {
     "id": "5",
-    "title": "Weather Dashboard",
-    "description": "A beautiful weather app with 7-day forecasts, location-based detection, animated weather icons, and air quality indices.",
-    "techStack": ["React.js", "OpenWeather API", "Chart.js", "CSS3"],
-    "githubUrl": "https://github.com/sandeshnepal106/weather-app",
-    "imageUrl": "https://images.unsplash.com/photo-1504608524841-42584120d693?w=800&q=80"
+    "title": "Solar Power Generation for Home",
+    "description": "Simulated a residential solar energy system with photovoltaic input, power conversion, PWM control, feedback loops, and real-time performance monitoring.",
+    "techStack": ["MATLAB", "Simulink", "Power Electronics Toolbox", "Control System Toolbox"],
+    "githubUrl": "https://github.com/sandeshnepal106",
+    "imageUrl": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80"
+  },
+  {
+    "id": "6",
+    "title": "AI-Based Rockfall Prediction and Alert System",
+    "description": "Built a predictive AI dashboard that analyzes geological and environmental data to forecast rockfall events and provide mine planners with live risk maps.",
+    "techStack": ["React.js", "Node.js", "Express.js", "MongoDB", "Machine Learning", "Leaflet"],
+    "githubUrl": "https://github.com/sandeshnepal106/Al-Based-Rockfall-Prediction-and-Alert-System-for-Open-Pit-Mines",
+    "imageUrl": "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=800&q=80"
+  },
+  {
+    "id": "7",
+    "title": "Quiz App",
+    "description": "Developed a social quiz platform where users can create and participate in quizzes, with private quizzes, authentication, photo uploads, follows, likes, and dynamic feeds.",
+    "techStack": ["React.js", "Node.js", "Express.js", "MongoDB", "Cloudinary", "OAuth"],
+    "githubUrl": "https://github.com/sandeshnepal106/quiz-app",
+    "imageUrl": "https://images.unsplash.com/photo-1606326608690-4e0281b1e588?w=800&q=80"
+  },
+  {
+    "id": "8",
+    "title": "Online Voting System",
+    "description": "Built a responsive polling website with user registration, login, poll management, and voting based on selected interests.",
+    "techStack": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    "githubUrl": "https://github.com/sandeshnepal106/Online-Voting-System",
+    "imageUrl": "https://images.unsplash.com/photo-1497720088610-2b1e2c33b1e2?w=800&q=80"
   }
 ]

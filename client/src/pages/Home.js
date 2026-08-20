@@ -52,7 +52,8 @@ function Home() {
       {/* ── HERO ─────────────────────────────────────── */}
       <section
         id="home"
-        className="relative w-full min-h-screen flex items-center justify-center overflow-hidden px-5 sm:px-8"
+        className="relative w-full min-h-[760px] lg:min-h-screen flex items-center justify-center px-5 sm:px-8"
+        style={{ overflowX: 'clip' }}
       >
         <BackgroundParticles />
 
@@ -62,8 +63,8 @@ function Home() {
         <div className="orb orb-cyan   w-[350px] h-[350px] bottom-0 right-0   opacity-8  pointer-events-none" />
 
         {/* Hero content wrapper */}
-        <div className="relative w-full max-w-5xl flex flex-col-reverse lg:flex-row
-          items-center justify-center gap-12 lg:gap-20 pt-20 pb-28 lg:py-0">
+        <div className="relative w-full max-w-6xl flex flex-col-reverse lg:flex-row
+          items-center justify-center gap-10 lg:gap-20 pt-28 pb-24 lg:py-0">
 
           {/* ── Left: Text ───────────────────────────── */}
           <div
@@ -79,9 +80,9 @@ function Home() {
             </span>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-5 font-jakarta">
               Hi, I'm <br className="hidden sm:block" />
-              <strong className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 drop-shadow-lg font-extrabold">
+              <strong className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-teal-300 to-orange-300 drop-shadow-lg font-extrabold">
                 Sandesh Nepal.
               </strong>
             </h1>
@@ -90,10 +91,10 @@ function Home() {
             <div className="text-xl sm:text-2xl font-semibold text-gray-400 mb-4 h-8 overflow-hidden">
               <TypeAnimation
                 sequence={[
-                  'Full Stack Developer', 2000,
-                  'Creative Problem Solver', 2000,
-                  'UI / UX Enthusiast', 2000,
-                  'Open Source Contributor', 2000,
+                  'Electrical & Electronics Engineer', 2000,
+                  'Full-Stack Developer', 2000,
+                  'IoT & Renewable Energy Builder', 2000,
+                  'Engineering Problem Solver', 2000,
                 ]}
                 speed={55}
                 className="text-purple-300"
@@ -102,8 +103,8 @@ function Home() {
             </div>
 
             <h2 className="text-[15px] sm:text-base text-gray-400/85 max-w-md leading-relaxed mb-8 font-light">
-              I craft beautiful, performant <strong className="text-white font-medium">web experiences</strong> — blending engineering
-              precision with creative design to build <strong className="text-purple-300 font-medium">products</strong> people love.
+              I build practical <strong className="text-white font-medium">software and smart engineering systems</strong> — blending
+              electrical engineering, data, and web development to solve real-world problems.
             </h2>
 
             {/* CTA buttons */}
@@ -139,7 +140,7 @@ function Home() {
           {/* ── Right: Avatar ─────────────────────────── */}
           <div ref={heroImgRef} className="relative z-50 shrink-0 flex items-center justify-center">
             {/* Outer decorative rings */}
-            <div className="absolute w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] rounded-full
+            <div className="absolute w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] rounded-full
               border border-dashed border-purple-500/25 ring-rotate pointer-events-none flex items-center justify-center">
               {/* Planet at top */}
               <div className="absolute -top-4 text-purple-400 opacity-70 icon-counter-rotate">
@@ -159,7 +160,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="absolute w-[320px] h-[320px] sm:w-[412px] sm:h-[412px] rounded-full
+            <div className="absolute w-[260px] h-[260px] sm:w-[330px] sm:h-[330px] md:w-[380px] md:h-[380px] rounded-full
               border border-dashed border-cyan-500/15 ring-rotate-reverse pointer-events-none flex items-center justify-center">
               {/* Rocket on left */}
               <div className="absolute -left-4 text-cyan-400 opacity-70 icon-counter-rotate-reverse">
@@ -204,7 +205,7 @@ function Home() {
             <div className="absolute -bottom-4 right-0 sm:-bottom-2 sm:-right-6
               glass rounded-2xl px-4 py-2.5 border border-white/10 shadow-card z-[60]">
               <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wide">Experience</p>
-              <p className="text-white font-bold text-base leading-tight">2+ Years</p>
+              <p className="text-white font-bold text-base leading-tight">3 Internships</p>
             </div>
           </div>
         </div>

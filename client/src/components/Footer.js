@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="text-center md:text-left">
             <p className="text-xl font-bold text-white font-jakarta">Sandesh Nepal.</p>
-            <p className="text-gray-500 text-sm mt-1">Full Stack Developer · NIT Sikkim</p>
+            <p className="text-gray-500 text-sm mt-1">Electrical &amp; Electronics Engineering · NIT Sikkim</p>
           </div>
 
           {/* Nav links */}

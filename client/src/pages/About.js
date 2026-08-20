@@ -8,15 +8,16 @@ import { FaCode, FaBullseye } from 'react-icons/fa';
 gsap.registerPlugin(ScrollTrigger);
 
 const techStack = [
-  'React.js', 'Node.js', 'Next.js', 'TypeScript', 'MongoDB',
-  'Express.js', 'Tailwind CSS', 'JavaScript', 'Python', 'Git', 'MySQL', 'PHP',
+  'C', 'C++', 'Python', 'HTML', 'CSS', 'JavaScript', 'React.js',
+  'React Native', 'Node.js', 'Express.js', 'PHP', 'MATLAB/Simulink',
+  'ETAP', 'PVSyst', 'ESP32', 'MongoDB', 'MySQL', 'Git', 'Vercel', 'Power BI',
 ];
 
 const currentFocus = [
-  'Building scalable full-stack projects',
-  'Mastering DSA with C & Web Dev tools',
-  'Exploring AI/ML and smart tech solutions',
-  'Blending creativity with clean UI/UX',
+  'Engineering renewable-energy and smart monitoring solutions',
+  'Building full-stack products with React, Node.js, and MongoDB',
+  'Exploring AI/ML for real-world safety and reliability problems',
+  'Growing through interdisciplinary engineering teams and continuous learning',
 ];
 
 function About() {
@@ -128,7 +129,7 @@ function About() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-6xl mx-auto py-24 px-5 sm:px-8">
+    <div ref={containerRef} className="section-clip relative w-full max-w-6xl mx-auto py-24 px-5 sm:px-8">
       <div className="orb orb-purple w-96 h-96 right-0 top-0 opacity-[0.08] pointer-events-none" />
 
       {/* Section header */}
@@ -168,8 +169,8 @@ function About() {
           {/* Stat cards */}
           <div className="flex flex-row md:flex-col gap-3 w-full">
             {[
-              { label: 'Projects', value: '10+' },
-              { label: 'Experience', value: '2+ Yrs' },
+              { label: 'Projects', value: '8' },
+              { label: 'Internships', value: '3' },
             ].map(s => (
               <div key={s.label}
                 className="flex-1 glass rounded-xl p-3 border border-white/8 text-center">
@@ -183,13 +184,18 @@ function About() {
         {/* ── Content Column ─────────────────────────── */}
         <div className="about-content-col space-y-8">
           <p className="text-base sm:text-lg leading-relaxed text-gray-300">
-            I'm <strong className="text-purple-300 font-semibold">Sandesh Nepal</strong>, a passionate{' '}
-            <strong className="text-white font-semibold">full-stack web developer</strong>{' '}
-            and software engineer blending creativity and code to craft meaningful digital experiences. With a
-            foundation in Electrical &amp; Electronics Engineering and a sharp eye for modern
-            web design, I build responsive, dynamic applications that reflect both{' '}
-            <strong className="text-purple-300 font-medium">function and aesthetics</strong>.
+            I'm <strong className="text-purple-300 font-semibold">Sandesh Nepal</strong>, an Engineering student at
+            <strong className="text-white font-semibold"> NIT Sikkim</strong> focused on Electrical &amp; Electronics
+            Engineering, software development, renewable energy, and intelligent systems. I enjoy turning complex
+            technical problems into practical tools, from responsive full-stack applications to IoT prototypes and
+            power-system simulations.
           </p>
+
+          <div className="border-l-2 border-cyan-400/40 pl-4">
+            <p className="text-sm text-gray-400">Education</p>
+            <p className="text-white font-semibold mt-1">B.Tech in Electrical and Electronics Engineering</p>
+            <p className="text-gray-500 text-sm mt-1">National Institute of Technology, Sikkim · Current CGPA: 7.30</p>
+          </div>
 
           <div>
             <h3 className="flex items-center gap-2.5 text-base font-bold text-white mb-4">

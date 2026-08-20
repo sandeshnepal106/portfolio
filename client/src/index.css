@@ -5,20 +5,20 @@
 /* =====================================================
    FONTS
 ===================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 /* =====================================================
    ROOT & GLOBAL
 ===================================================== */
 :root {
-  --color-bg: #030014;
-  --color-surface: rgba(255, 255, 255, 0.03);
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(255, 255, 255, 0.15);
-  --color-cyan: #22d3ee;
-  --color-purple: #a855f7;
-  --color-pink: #ec4899;
-  --color-violet: #7c3aed;
+  --color-bg: #08051a;
+  --color-surface: rgba(255, 255, 255, 0.055);
+  --color-border: rgba(196, 181, 253, 0.16);
+  --color-border-hover: rgba(103, 232, 249, 0.3);
+  --color-cyan: #67e8f9;
+  --color-purple: #a78bfa;
+  --color-pink: #f472b6;
+  --color-violet: #24134f;
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -32,14 +32,24 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
-  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Manrope', sans-serif;
   background-color: var(--color-bg);
   color: rgba(255, 255, 255, 0.9);
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 15% 5%, rgba(167, 139, 250, 0.15), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(103, 232, 249, 0.09), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(244, 114, 182, 0.08), transparent 30%),
+    linear-gradient(180deg, #08051a 0%, #0d0923 52%, #08051a 100%);
+  background-size: auto;
 }
 
 /* Subtle scrollbar */
@@ -52,16 +62,24 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(168, 85, 247, 0.5);
+  background: rgba(167, 139, 250, 0.55);
   border-radius: 99px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(168, 85, 247, 0.8);
+  background: rgba(103, 232, 249, 0.9);
+}
+
+::selection {
+  color: #081012;
+  background: var(--color-cyan);
 }
 
 #root {
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -81,20 +99,30 @@ body::before {
 }
 
 /* =====================================================
+   SECTION OVERFLOW CLIP — prevents decorative absolute
+   elements (orbs, rings, etc.) from triggering a
+   horizontal scrollbar / forcing the browser to zoom out.
+===================================================== */
+.section-clip {
+  overflow-x: clip;
+}
+
+/* =====================================================
    GLASS MORPHISM COMPONENT
 ===================================================== */
 .glass {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(20px);
+  background: linear-gradient(145deg, rgba(167, 139, 250, 0.1), rgba(255, 255, 255, 0.025));
+  backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(20px);
+  background: linear-gradient(145deg, rgba(167, 139, 250, 0.1), rgba(255, 255, 255, 0.025));
+  backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--color-border);
 }
 
 .glass-hover {
@@ -120,14 +148,14 @@ body::before {
    GRADIENT TEXT
 ===================================================== */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-purple) 55%, var(--color-pink) 100%);
+  background: linear-gradient(110deg, var(--color-purple) 0%, var(--color-cyan) 52%, var(--color-pink) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-accent {
-  background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-purple) 50%, var(--color-pink) 100%);
+  background: linear-gradient(110deg, var(--color-pink) 0%, var(--color-purple) 52%, var(--color-cyan) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -146,8 +174,8 @@ body::before {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  background: rgba(168, 85, 247, 0.1);
-  border: 1px solid rgba(168, 85, 247, 0.3);
+  background: rgba(196, 242, 93, 0.08);
+  border: 1px solid rgba(196, 242, 93, 0.3);
   color: var(--color-purple);
   margin-bottom: 1rem;
 }
@@ -156,7 +184,8 @@ body::before {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 /* =====================================================
@@ -171,15 +200,15 @@ body::before {
 }
 
 .orb-purple {
-  background: radial-gradient(ellipse, #7c3aed 0%, transparent 70%);
+  background: radial-gradient(ellipse, #f4c95d 0%, transparent 70%);
 }
 
 .orb-cyan {
-  background: radial-gradient(ellipse, #22d3ee 0%, transparent 70%);
+  background: radial-gradient(ellipse, #67e8d4 0%, transparent 70%);
 }
 
 .orb-pink {
-  background: radial-gradient(ellipse, #ec4899 0%, transparent 70%);
+  background: radial-gradient(ellipse, #ff8f70 0%, transparent 70%);
 }
 
 /* =====================================================
@@ -190,12 +219,12 @@ body::before {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.75rem;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   font-weight: 600;
   font-size: 0.9375rem;
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
-  color: white;
-  border: 1px solid rgba(168, 85, 247, 0.5);
+  background: var(--color-purple);
+  color: #081012;
+  border: 1px solid rgba(196, 242, 93, 0.7);
   cursor: pointer;
   transition: var(--transition-smooth);
   position: relative;
@@ -206,7 +235,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #a855f7, #22d3ee);
+  background: linear-gradient(135deg, #d9ff83, #67e8f9);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -217,7 +246,7 @@ body::before {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.5), 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(196, 242, 93, 0.25), 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary span {
@@ -230,7 +259,7 @@ body::before {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.75rem;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   font-weight: 600;
   font-size: 0.9375rem;
   background: rgba(255, 255, 255, 0.05);
@@ -309,7 +338,7 @@ body::before {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.5), rgba(168, 85, 247, 0.5), rgba(236, 72, 153, 0.5));
+  background: linear-gradient(135deg, rgba(103, 232, 249, 0.7), rgba(196, 242, 93, 0.7), rgba(255, 143, 112, 0.7));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
@@ -339,22 +368,22 @@ body::before {
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  background: rgba(34, 211, 238, 0.08);
-  border: 1px solid rgba(34, 211, 238, 0.2);
-  color: #22d3ee;
+  background: rgba(103, 232, 249, 0.08);
+  border: 1px solid rgba(103, 232, 249, 0.22);
+  color: #a5f3fc;
   transition: all 0.2s ease;
 }
 
 .tech-tag:hover {
-  background: rgba(34, 211, 238, 0.15);
-  border-color: rgba(34, 211, 238, 0.4);
+  background: rgba(103, 232, 249, 0.15);
+  border-color: rgba(103, 232, 249, 0.4);
 }
 
 /* =====================================================
    TIMELINE LINE ANIMATED
 ===================================================== */
 .timeline-line {
-  background: linear-gradient(to bottom, transparent, rgba(168, 85, 247, 0.6), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(244, 201, 93, 0.7), rgba(103, 232, 212, 0.35), transparent);
 }
 
 /* =====================================================
