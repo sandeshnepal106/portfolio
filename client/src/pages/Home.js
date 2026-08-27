@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ChatWidget from '../components/ChatWidget';
 import BackgroundParticles from "../components/BackgroundParticles";
 import { lazy, Suspense } from 'react';
 import aboutImg from '../assets/about.jpg';
@@ -242,6 +243,7 @@ function Home() {
       </main>
 
       <Footer />
+      <ChatWidget />
     </div>
   );
 }
