@@ -1,5 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+Disallow: /admin-login
+Disallow: /admin-dashboard
 
 Sitemap: https://sandeshnepal.vercel.app/sitemap.xml
